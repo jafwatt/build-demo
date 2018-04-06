@@ -1,10 +1,10 @@
 node {
 	stage('Checkout') {
-    		echo Checking out source code
+    		echo 'Checking out source code'
     		def scmVars = checkout scm
 	}
 	stage('Version') {
-		echo Calculating the version number
+		echo 'Calculating the version number'
 		sh 'echo Calculate the version'
 		sh 'python /var/lib/jenkins/Build/calc_maven_version.py'
 		def version = readFile 'version.properties'
