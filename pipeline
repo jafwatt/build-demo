@@ -8,10 +8,11 @@ node {
 		sh 'python /var/lib/jenkins/Build/calc_maven_version.py'
 		def exists = fileExists 'version.properties'
 		if (exists) {
-			def version = readFile 'version.properties'
+			def version = readFile 'version.propertiessssssssssssss'
 			echo version
 		} else {
-			echo 'No'
+ 			currentBuild.result = 'ABORTED'
+    			error('Could not determine version number')		
 		}
 	}
 }
