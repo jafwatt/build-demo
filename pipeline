@@ -7,7 +7,7 @@ node {
 		echo 'Calculating the version number'
 		sh 'echo Calculate the version'
 		sh 'python /var/lib/jenkins/Build/calc_maven_version.py'
-		def version = readFile 'version.properties'
-		echo version
+		load 'version.properties'
+		echo '${env.BuildVersion}'
 	}
 }
