@@ -6,8 +6,7 @@ node {
 	stage('Version') {
 		sh 'echo Calculate the version'
 		sh 'python /var/lib/jenkins/Build/calc_maven_version.py'
-		def exists = fileExists 'version.properties'
-		if (exists) {
+		if (fileExists 'version.properties') {
 			echo 'Yes'
 		} else {
 			echo 'No'
