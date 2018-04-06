@@ -1,0 +1,9 @@
+node {
+	stage('Checkout') {
+    	sh 'echo hello world'
+    	def scmVars = checkout scm
+	},
+	stage('Version') {
+		sh 'echo Calculate the version'
+	}
+}
