@@ -6,7 +6,7 @@ node {
 	stage('Version') {
 		echo 'Calculating the version number'
 		sh 'echo Calculate the version'
-		sh 'python /var/lib/jenkins/Build/calc_maven_version.py'
+		sh 'python /var/lib/jenkins/Build/pipeline_calc_maven_version.py'
 		load 'version.properties'
 		echo '${env.BuildVersion}'
 	}
